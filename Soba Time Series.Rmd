@@ -1,0 +1,59 @@
+---
+title: "Time Series"
+output: html_document
+---
+
+## Import Libraries
+
+```{r}
+# importing all the necessary libraries
+library(tsibble)
+library(tidyverse)
+library(plotly)
+library(readr)
+```
+
+## Import dataset
+
+```{r}
+# CREATE THE DATAFRAME
+```
+
+
+```{r}
+data <- read_csv("\\Users\\Admin\\Downloads\\Soba Dataset.csv")
+data <- data_frame(data)
+head(data)
+```
+
+## Check for Null Values
+
+```{r}
+#CHECK FOR NULL VALUES IN THE DF
+is.null(data) 
+```
+
+```{r}
+#Number of Cases each week
+fig <- plot_ly(data, x = ~Pho, y = ~Ramen, type = 'histogram2dcontour', mode='lines+markers')
+fig
+```
+
+```{r}
+fig <- plot_ly(data, x = ~Month, y = ~Ramen, type = 'scatter')
+fig
+```
+
+```{r}
+fig_1 <- plot_ly(data, x = ~Month, y = ~Pho, type = 'scatter')
+fig_1
+```
+
+
+```{r}
+fig_2 <- plot_ly(data, x = ~Month, y = ~Soba, type = 'scatter')
+fig_2
+```
+
+## Conclusion
+
